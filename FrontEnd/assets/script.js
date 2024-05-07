@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         filterImages(currentCategory);
     });
 
+    // Focntion pour recharger image + titre + catégorie
     function imageGenerator() {
         fetch('http://localhost:5678/api/works')
             .then(function(response) {
@@ -101,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fonction pour déconnecter l'utilisateur
     function logoutUser() {
-        // Supprimer le token du localStorage
+        // Supprime le token du localStorage
         localStorage.removeItem('token');
         login = false;
         location.reload();
@@ -111,12 +112,12 @@ document.addEventListener('DOMContentLoaded', function() {
         logoutUser();
     });
 
-    // Fonction pour rafraîchir et réafficher les images depuis l'API
+    // Fonction pour recharger les images depuis l'API
     function refreshImages() {
         // Effacer toutes les images actuellement affichées dans la galerie
         gallery.innerHTML = '';
 
-        // Recharger les images depuis l'API et les afficher dans la galerie
+        // Recharge les images depuis l'API et les afficher dans la galerie
         imageGenerator();
     }
 
@@ -201,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                         if (!response.ok) {
                                             throw new Error('La requête n\'a pas abouti.');
                                         }
-                                        // Une fois l'image supprimée avec succès, rechargez les images
+                                        // Une fois l'image supprimée, recharge les images
                                         fetchAndDisplayImages();
                                         refreshImages();
                                     })
@@ -229,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const addDiv = document.createElement('h2');
             addDiv.textContent = 'Ajouter une photo'
             addDiv.id = 'add';
-            // Ajout d'un écouteur d'événements pour le clic sur l'élément "add"
+            // Ajout d'un EventListener pour le clic sur l'élément "add"
             addDiv.addEventListener('click', function() {
                 openSecondModal();
                 const firstModal = document.getElementById('modal');
@@ -242,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
             modal.appendChild(modalContent);
             addPhotoSection.appendChild(addDiv);
 
-            // Ajout du modal à la fin du body
+            // Ajout de la modal
             document.body.appendChild(modal);
         } else {
             // Si la modal existe déjà, la rendre visible
@@ -250,6 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    // Ouvre la modal quand "modifier" est cliquer
     modifyElement.addEventListener('click', openFirstModalFunction);
 
     function openSecondModal() {
@@ -292,7 +294,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             modalContent.appendChild(backButton);
 
-            // Ajout du bouton de fermeture et du contenu à la div modal-content
+            // Ajout du bouton de fermeture
             modalContent.appendChild(closeButton);
 
             // Création de la div gallery-text
@@ -340,7 +342,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
             });
 
-            // Création du bouton personnalisé pour le téléchargement d'image
+            // Création du bouton personnalisé pour l'upload d'image
             const customFileInput = document.createElement('div');
             customFileInput.classList.add('custom-file-input');
             const customFileInputLabel = document.createElement('label');
@@ -372,8 +374,8 @@ document.addEventListener('DOMContentLoaded', function() {
             form.appendChild(imageLabel);
 
             // Input pour le titre
-            const titleHeader = document.createElement('h3'); // Utilisation de <h3> pour le titre
-            titleHeader.textContent = 'Titre'; // Texte du titre
+            const titleHeader = document.createElement('h3');
+            titleHeader.textContent = 'Titre';
             const titleInput = document.createElement('input');
             titleInput.type = 'text';
             titleInput.name = 'title';
@@ -382,8 +384,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
             // Sélection de la catégorie
-            const categoryHeader = document.createElement('h3'); // Utilisation de <h3> pour le titre
-            categoryHeader.textContent = 'Catégorie:'; // Texte du titre
+            const categoryHeader = document.createElement('h3');
+            categoryHeader.textContent = 'Catégorie:';
             const categorySelect = document.createElement('select');
             categorySelect.name = 'category';
             categoryHeader.appendChild(categorySelect);
@@ -406,7 +408,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ];
             categories.forEach(function(category) {
                 const option = document.createElement('option');
-                option.value = category.id; // Utilisez l'identifiant numérique comme valeur
+                option.value = category.id; // Utilisez l'identifiant de la catégorie comme valeur
                 option.textContent = category.name;
                 categorySelect.appendChild(option);
             });
@@ -414,7 +416,7 @@ document.addEventListener('DOMContentLoaded', function() {
             categoryHeader.appendChild(categorySelect);
             form.appendChild(categoryHeader);
 
-            // Cacher le bouton d'entrée de fichier standard
+            // Cacher le bouton d'd'upload de fichier d'origine
             imageInput.style.display = 'none';
 
             customFileInputLabel.addEventListener('click', function() {
@@ -426,19 +428,16 @@ document.addEventListener('DOMContentLoaded', function() {
             bar.classList.add('add-photo');
             form.appendChild(bar);
 
-            // Bouton de soumission
+            // Bouton de soumission du form
             const submitButton = document.createElement('button');
             submitButton.type = 'submit';
             submitButton.textContent = 'Ajouter une photo';
             form.appendChild(submitButton);
 
-            // Ajout du form à la div modal-content
             modalContent.appendChild(form);
 
-            // Ajout de la div modal-content à la deuxième modal
             secondModal.appendChild(modalContent);
 
-            // Ajout de la deuxième modal au corps du document
             document.body.appendChild(secondModal);
 
         } else {
