@@ -1,0 +1,536 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/** end reset css**/
+body {
+	max-width: 1140px;
+	margin:auto;
+	font-family: 'Work Sans' ;
+	font-size: 14px;
+}
+
+header {
+	display: block;
+}
+
+header .banner{
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6%;
+    background-color: black;
+}
+
+header .banner .fa-pen-to-square{
+	padding-right: 10px;
+}
+
+header .banner h3{
+	color: white;
+	font-weight: 400;
+	font-size: 16px;
+	transform: translateY(100%);
+	margin: auto;
+    text-align: center;
+}
+
+
+header section{
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0;
+}
+
+/* Padding au dessus du header pour crée de l'espace entre le header et le mode édition  */
+header .padding {
+	padding-top: 50px;
+}
+
+header nav a{
+	text-decoration: none;
+	color: inherit; /* Utilise la couleur par défaut du texte */
+    cursor: pointer; /* Change le curseur lorsque survolé */
+}
+
+section {
+	margin: 50px 0
+}
+
+h1{
+	display: flex;
+	flex-direction: column;
+	font-family: 'Syne';
+	font-size: 22px;
+	font-weight: 800;
+	color: #B1663C
+}
+
+h1 > span {
+	font-family: 'Work Sans';
+	font-size:10px;
+	letter-spacing: 0.1em;
+;
+}
+
+h2{
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 30px;
+	color: #1D6154
+}
+
+#login h2{
+	text-align: center;
+}
+
+nav ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+
+}
+nav li {
+	padding: 0 10px;
+	font-size: 1.2em;
+}
+
+li:hover {
+	color: #B1663C;
+}
+#introduction {
+	display: flex;
+	align-items: center;
+}
+#introduction figure {
+	flex: 1
+}
+#introduction img {
+	display: block;
+	margin: auto;
+	width: 80%;
+}
+
+#introduction article {
+	flex: 1
+}
+#introduction h2 {
+	margin-bottom: 1em;
+}
+
+#introduction p {
+	margin-bottom: 0.5em;
+}
+
+#portfolio .titre {
+	display: flex;
+	justify-content: center; /* Centre horizontalement */
+}
+
+#portfolio .titre h2 {
+	margin-bottom: 1em;
+	font-family: 'syne';
+	color: #1D6154;
+	text-align: center; /* Centrer le texte */
+}
+
+#portfolio .titre a {
+	padding-top: 0.5%;
+	margin-left: 20px;
+}
+
+
+.gallery {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+}
+
+.gallery img {
+	width: 100%;
+}
+
+.categorie {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+	margin-top: 50px;
+}
+
+.categorie .button {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-width: 1px;
+	border-color: #1D6154;
+	border-radius: 40px;
+	border-style: solid;
+	margin-bottom: 10px;
+	margin-right: 15px;
+	color: #1D6154;
+	background-color: white;
+
+	font-family: 'syne';
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.categorie .select-button {
+	color: white;
+	background-color: #1D6154;
+}
+
+.hidden {
+	display: none;
+}
+
+#login,
+#contact {
+	width: 50%;
+	margin: auto;
+}
+#login,
+#contact > * {
+	text-align: center;
+
+}
+#login,
+#contact h2{
+	margin-bottom: 20px;
+}
+
+#login,
+#contact form {
+	text-align: left;
+	margin-top:30px;
+	display: flex;
+	flex-direction: column;
+}
+#login,
+#contact input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#login,
+#contact label {
+	margin: 2em 0 1em 0;
+}
+#login,
+#contact textarea {
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+input[type="submit"]{
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto ;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px ;
+}
+
+footer nav ul {
+	display: flex;
+	justify-content: flex-end;
+	margin: 2em
+}
+
+/* Styles pour la fenêtre modale */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour l'effet de superposition */
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles pour le contenu de la fenêtre modale */
+.modal-content {
+	width: 50%; /* Largeur du carré */
+    height: 750px;
+    background-color: white; /* Couleur du carré */
+	position: absolute; /* Position absolue pour centrer */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Centrage exact */
+    border-radius: 10px;
+}
+
+.modal-close-button {
+    position: relative;
+	left: 95%;
+	top: 25px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+	z-index: 1;
+}
+
+#gallery-text {
+    text-align: center;
+	margin-top: 50px;
+}
+
+#gallery-text h2{
+    color: black;
+}
+
+#addphoto-text {
+	text-align: center;
+	padding-top: 25px;
+}
+
+#addphoto-text h2{
+    color: black;
+}
+
+#add {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-color: #1D6154;
+    border-radius: 40px;
+    margin-top: 30px;
+    color: white;
+    background-color: #1D6154;
+    font-family: 'syne';
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; /* Assure que l'élément est affiché en tant que bloc */
+    width: fit-content; /* Ajuste la largeur de l'élément en fonction de son contenu */
+}
+
+.add-photo {
+    width: 70%;
+    height: 2px;
+    position: absolute;
+    left: 15%;
+	top: 600px;
+    background-color: #B3B3B3;
+}
+
+/* Style pour l'icône de la poubelle */
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container i {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 24px;
+}
+
+.modal-square {
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 50px;
+	display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17%, 1fr)); /* Définir les colonnes de la grille */
+    grid-gap: 4px; /* Espacement entre les images */
+}
+
+/* Styles pour les images à l'intérieur du carré blanc */
+.modal-square img {
+	margin-bottom: 10px;
+    width: 70%; /* Largeur maximale des images */
+    height: auto; /* Hauteur automatique pour conserver le ratio d'aspect */
+}
+
+/* Icon poubelle */
+.modal-square i {
+	color: white;
+	background-color: black;
+	border-radius: 5px;
+	padding: 4px;
+    top: 10px;
+    right: 50px;
+    font-size: 18px;
+}
+
+/* modale 2 */
+
+.fa-arrow-left {
+	position: absolute;
+	left: 2%;
+	top: 30px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+	z-index: 1;
+}
+
+.modal-content form {
+	position: relative;
+	display: block;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.add-pictures-zone{
+	position: relative;
+	display: block;
+	left: 50%;
+	top: -40px;
+	transform: translate(-50%, -50%);
+	background-color: #E8F1F6;
+	padding-top: 125px;
+	padding-bottom: 125px;
+	width: 80%;
+}
+
+.add-pictures-zone img{
+	position: absolute;
+	max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de la zone */
+    max-height: 100%; /* Assure que l'image ne dépasse pas la hauteur de la zone */
+	left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fa-image {
+	position: absolute;
+	font-size: 70px;
+	color: #B9C5CC;
+	left: 50%;
+	top: 30%;
+	transform: translate(-50%, -50%);
+}
+
+
+.add-pictures-zone h2{
+	position: absolute;
+	font-weight: 500;
+	font-family: 'Work Sans' ;
+	color: #306685;
+	font-size: 14px;
+	background-color: #CBD6DC;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 40px;
+	width: auto;
+	left: 50%;
+	transform: translateX(-50%); /* Déplace le texte de moitié de sa propre largeur vers la gauche */
+}
+
+.modal-content form h3{
+	position: relative;
+    display: block;
+	left: 10%;
+	top: -120px;
+	margin-bottom: 25px;
+}
+
+.modal-content form select{
+	position: relative;
+	display: block;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	width: 80%;
+	height: 60px;
+	border: none;
+}
+
+.modal-content form input[type="text"]{
+	position: relative;
+	display: block;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	width: 80%;
+	height: 60px;
+}
+
+.modal-content form button[type="submit"]{
+	position: relative;
+	border: none;
+	left: 50%;
+	top: -100px;
+	transform: translateX(-50%); /* Déplace le texte de moitié de sa propre largeur vers la gauche */
+	color: white;
+	background-color: #1D6154;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-width: 1px;
+	border-radius: 40px;
+	border-style: solid;
+	margin-bottom: 10px;
+	margin-right: 15px;
+}
+
+#second-modal .modal-content .add-photo {
+    width: 70%;
+    height: 2px;
+    position: relative;
+    left: 50%;
+	transform: translateX(-50%); /* Déplace le texte de moitié de sa propre largeur vers la gauche */
+	top: -100px;
+	margin-bottom: 25px;
+    background-color: #B3B3B3;
+}
